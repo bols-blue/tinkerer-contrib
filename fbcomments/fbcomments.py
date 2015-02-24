@@ -54,7 +54,7 @@ def add_fbcomments(app, pagename, templatename, context, doctree):
 
     # if page is blog post and has comments
     if pagename in env.blog_metadata and env.blog_metadata[pagename].comments:
-        link = app.config.website + env.blog_metadata[pagename].link + ".html"
+        link = app.config.website + str(env.blog_metadata[pagename].link) + ".html"
 
         context["comments"] = create_thread(link)
 
